@@ -28,8 +28,7 @@ void StampaArray(int[] array)
 
 int Quadrato(int numero)
 {
-    Console.WriteLine($"Il quadrato di {numero} é {Math.Pow(numero, 2)}");
-    return numero;
+    return numero*numero;
 }
 
 
@@ -43,7 +42,6 @@ int[] ElevaArrayAlQuadrato(int[] array)
     {
         newArray[i] = array[i]* array[i];
     }
-    Console.WriteLine("Il nuovo array di numeri al quadrato é: [{0}]", string.Join(", ", newArray));
     return newArray;
 }
 
@@ -57,7 +55,6 @@ int sommaElementiArray(int[] array)
     {
         sum += elm;
     }
-    Console.WriteLine($"La somma dei numeri nel tuo array é {sum}");
     return sum;
 }
 
@@ -73,15 +70,18 @@ StampaArray(arrayOfNumbers);
 
 //Stampare l’array di numeri fornito a video, dove ogni numero è stato prima elevato al quadrato (Verificare che l’array originale non sia stato modificato quindi ristampare nuovamente l’array originale e verificare che sia rimasto [2, 6, 7, 5, 3, 9])
 
+Console.WriteLine("Stampare l’array dove ogni numero è stato prima elevato al quadrato: ");
 int[] powArray = ElevaArrayAlQuadrato(arrayOfNumbers);
+StampaArray(powArray);
 
 //Stampare la somma di tutti i numeri
 
-sommaElementiArray(arrayOfNumbers);
+Console.WriteLine("Stampare la somma di tutti i numeri dell'array originale: ");
+Console.WriteLine(sommaElementiArray(arrayOfNumbers));
 
 //Stampare la somma di tutti i numeri elevati al quadrato
 
-Console.WriteLine("*Tutti i numeri vengono elevati al quadrato*");
-sommaElementiArray(powArray);
+Console.WriteLine("Stampare la somma di tutti i numeri dell'array originale elevati al quadrato: ");
+Console.WriteLine(sommaElementiArray(powArray));
 
 //BONUS: Convertire le funzioni appena dichiarate in funzioni generiche, ossia funzioni che possono lavorare con array di numeri interi di lunghezza variabile, ossia debbono poter funzionare sia che gli passi array di 5 elementi, sia di 6, di 7, di ... e così via. A questo punto modificare il programma in modo che chieda all’utente quanti numeri voglia inserire, e dopo di che questi vengono inseriti a mano dall’utente esternamente.
